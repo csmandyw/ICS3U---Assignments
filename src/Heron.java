@@ -1,4 +1,4 @@
-//Heron's Formula - Assignment 1 (Feb.25.2025)
+// Heron's Formula - Assignment 1 (Feb.25.2025)
 import java.util.Scanner;
 
 public class Heron {
