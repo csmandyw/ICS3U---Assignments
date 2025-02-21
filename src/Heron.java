@@ -11,9 +11,10 @@ public class Heron {
         double b = keyboard.nextDouble();
         System.out.println("Please enter the c value");
         double c = keyboard.nextDouble();
+        double d = a * a + b * b - c * c;
         keyboard.close();
 
-        double A = Math.sqrt(4 * a * a * b * b - (a * a + b * b - c * c) * (a * a + b * b - c * c))/4;
+        double A = Math.sqrt(4 * a * a * b * b - d * d)/4;
         System.out.println("The area of the triangle is: " + A);
     }
 }
