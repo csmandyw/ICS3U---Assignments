@@ -15,7 +15,7 @@ public class BooleanTest {
         boolean D = keyboard.nextBoolean();
         keyboard.close();
         
-        boolean a = (B && !D) || (!B && !C && D) || (!A && !B && !C) || (A && C && !D);
+        boolean a = !(B && !D) || !(!B && !C && D) || !(!A && !B && !C) || !(A && C && !D);
         System.out.println("Your output is: " + a);
     }
 }
