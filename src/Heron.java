@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Heron {
     public static void main(String[] args) throws Exception {
-        Scanner keyboard = new Scanner (System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Please enter the a value");
         double a = keyboard.nextDouble();
@@ -14,7 +14,7 @@ public class Heron {
         double d = a * a + b * b - c * c;
         keyboard.close();
 
-        double A = Math.sqrt(4 * a * a * b * b - d * d)/4;
-        System.out.println("The area of the triangle is: " + A);
+        double areaA = Math.sqrt(4 * a * a * b * b - d * d) / 4;
+        System.out.println("The area of the triangle is: " + areaA);
     }
 }
