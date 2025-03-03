@@ -14,14 +14,26 @@ public class AmbiguousCase {
         keyboard.close();
 
         double h = b * Math.sin(Math.toRadians(angleA));
-        if (a < h) {
-            System.out.println("No Triangle.");
-        } else if (a == h) {
-            System.out.println("Right Triangle.");
-        } else if (a > b) {
-            System.out.println("One Triangle.");
-        } else {
-            System.out.println("Ambiguous Case - Two Triangles");
+
+        // acute triangle
+        if (angleA < 90) {
+            if (a < h) {
+                System.out.println("No Triangle.");
+            } else if (a == h) {
+                System.out.println("Right Angle Triangle.");
+            } else if (a > b) {
+                System.out.println("One Triangle.");
+            } else if (h < a && a < b) {
+                System.out.println("Two triangles; you have an ambiguous case.");
+            }
+        }
+        // obtuse angle
+        else if (angleA > 90) {
+            if (a < b || a == h) {
+                System.out.println("No Triangle.");
+            } else if (a > b) {
+                System.out.println("One Triangle.");
+            }
         }
     }
 }
