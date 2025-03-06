@@ -18,21 +18,21 @@ public class AmbiguousCase {
         // acute triangle
         if (angleA < 90) {
             if (a < h) {
-                System.out.println("No Triangle.");
+                System.out.println("You have no triangle.");
             } else if (a == h) {
-                System.out.println("Right Angle Triangle.");
+                System.out.println("You have a right angle triangle.");
             } else if (a > b) {
-                System.out.println("One Triangle.");
+                System.out.println("You have one triangle.");
             } else if (h < a && a < b) {
-                System.out.println("Two triangles; you have an ambiguous case.");
+                System.out.println("This is an ambiguous case; you have two triangles.");
             }
         }
         // obtuse angle
         else if (angleA > 90) {
-            if (a < b || a == h) {
-                System.out.println("No Triangle.");
+            if (a < b || a == b) {
+                System.out.println("You have no triangle.");
             } else if (a > b) {
-                System.out.println("One Triangle.");
+                System.out.println("You have one triangle.");
             }
         }
     }
