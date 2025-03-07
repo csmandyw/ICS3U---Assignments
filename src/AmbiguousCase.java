@@ -15,7 +15,7 @@ public class AmbiguousCase {
 
         double h = b * Math.sin(Math.toRadians(angleA));
 
-        // acute triangle
+        // acute angle triangle
         if (angleA < 90) {
             if (a < h) {
                 System.out.println("You have no triangle.");
@@ -27,7 +27,7 @@ public class AmbiguousCase {
                 System.out.println("This is an ambiguous case; you have two triangles.");
             }
         }
-        // obtuse angle
+        // obtuse angle triangle
         else if (angleA > 90) {
             if (a < b || a == b) {
                 System.out.println("You have no triangle.");
