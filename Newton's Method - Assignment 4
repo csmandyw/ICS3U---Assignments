@@ -1,0 +1,25 @@
+// Newton's Method - Assignment 4 (Mar.19.2025)
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        Scanner keyboard = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Please enter an inital root guess.");
+            double x = keyboard.nextDouble();
+
+            while (x != -1 && x != -0.5 && x != 2.0 / 3.0 && x != 3) {
+                double function = 6 * Math.pow(x, 4) - 13 * Math.pow(x, 3) - 18 * Math.pow(x, 2) + 7 * x + 6;
+                double derivative = 24 * Math.pow(x, 3) - 39 * Math.pow(x, 2) - 36 * x + 7;
+                x = x - function / derivative;
+                System.out.println(x);
+            }
+            System.out.println("Do you want to try again? [y/n]");
+            if (keyboard.next().charAt(0) == 'n') {
+                keyboard.close();
+                break;
+            }
+        }
+    }
+}
