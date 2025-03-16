@@ -6,16 +6,16 @@ public class BooleanTest {
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Please enter an A value (true/false): ");
-        boolean A = keyboard.nextBoolean();
+        boolean a = keyboard.nextBoolean();
         System.out.println("Please enter a B value (true/false): ");
-        boolean B = keyboard.nextBoolean();
+        boolean b = keyboard.nextBoolean();
         System.out.println("Please enter an C value (true/false): ");
-        boolean C = keyboard.nextBoolean();
+        boolean c = keyboard.nextBoolean();
         System.out.println("Please enter an D value (true/false): ");
-        boolean D = keyboard.nextBoolean();
+        boolean d = keyboard.nextBoolean();
         keyboard.close();
 
-        boolean output = (B && !D) || (!B && !C && D) || (!A && !B && !C) || (A && C && !D);
+        boolean output = (b && !d) || (!b && !c && d) || (!a && !b && !c) || (a && c && !d);
         System.out.println("Your output is: " + output);
     }
 }
