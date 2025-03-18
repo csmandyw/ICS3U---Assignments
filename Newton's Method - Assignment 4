@@ -1,7 +1,7 @@
 // Newton's Method - Assignment 4 (Mar.19.2025)
 import java.util.Scanner;
 
-public class App {
+public class NewtonsMethod {
     public static void main(String[] args) throws Exception {
         Scanner keyboard = new Scanner(System.in);
 
