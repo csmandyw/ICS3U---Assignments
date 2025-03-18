@@ -13,7 +13,7 @@ public class NewtonsMethod {
                 double function = 6 * Math.pow(x, 4) - 13 * Math.pow(x, 3) - 18 * Math.pow(x, 2) + 7 * x + 6;
                 double derivative = 24 * Math.pow(x, 3) - 39 * Math.pow(x, 2) - 36 * x + 7;
                 x = x - function / derivative;
-                System.out.println(x);
+                System.out.println("Your root is: " + x);
             }
             System.out.println("Do you want to try again? [y/n]");
             if (keyboard.next().charAt(0) == 'n') {
