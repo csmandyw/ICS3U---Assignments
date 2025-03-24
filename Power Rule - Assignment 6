@@ -1,4 +1,3 @@
-
 // Power Rule - Assignment 6 (Mar.26.2025)
 import java.util.Scanner;
 
@@ -28,10 +27,10 @@ public class PowerRule {
                 firstDerivative += (firstCoeff > 0 ? "+" : "") + firstCoeff + "x^" + firstExpo + " ";
             }
             // second derivative
-            if (coefficient > 1) {
+            if (coefficient > 0) {
                 double secondCoeff = coefficient * exponent * (exponent - 1);
                 int secondExpo = exponent - 2;
-                firstDerivative += (secondCoeff > 0 ? "+" : "") + secondCoeff + "x^" + secondExpo + " ";
+                secondDerivative += (secondCoeff > 0 ? "+" : "") + secondCoeff + "x^" + secondExpo + " ";
             }
         }
         System.out.println("Your first derivative is: " + firstDerivative);
