@@ -36,9 +36,6 @@ public class PowerRule {
                     secondDerivative += (secondCoeff > 0 ? "+" : "") + secondCoeff + "x^" + secondExpo + " ";
                 }
             }
-            if (coeff == (int)coeff) {
-                System.out.println((int)coeff);
-            }
         }
         System.out.println("Your first derivative is: " + firstDerivative);
         System.out.println("Your second derivative is: " + secondDerivative);
