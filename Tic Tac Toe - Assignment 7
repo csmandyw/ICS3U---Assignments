@@ -47,7 +47,7 @@ public class TicTacToe {
                 return true;
             }
         }
-        // check digonal wins
+        // check diagonal wins
         if ((grid[0][0] == currentPlayer && grid[1][1] == currentPlayer && grid[2][2] == currentPlayer) ||
                 (grid[0][2] == currentPlayer && grid[1][1] == currentPlayer && grid[2][0] == currentPlayer)) {
             return true;
