@@ -1,0 +1,9 @@
+// Dictionary - Assignment 8 (Apr.9.2025)
+import java.util.Scanner;
+
+public class Dictionary {
+    public static void main(String[] args) throws Exception {
+        Scanner keyboard = new Scanner (System.in);
+        System.out.println("Hello, World!");
+    }
+}
