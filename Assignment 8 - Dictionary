@@ -36,7 +36,7 @@ public class Dictionary {
             System.out.println("Error opening file.");
         } catch (IOException exception) {
             System.out.println("Error creating file.");
-        } finally {
+        } finally { // good practice; generally used if code deals with files; always go through finally bc it can stop errrors that ctach can't
             if (inputStream != null) {
                 inputStream.close();
             }
