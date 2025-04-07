@@ -33,9 +33,13 @@ public class Dictionary {
                 }
             }
         } catch (FileNotFoundException exception) {
-            System.out.println("Error opening file");
+            System.out.println("Error opening file.");
         } catch (IOException exception) {
-            System.out.println("Error creating file");
+            System.out.println("Error creating file.");
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
         }
     }
 }
