@@ -6,7 +6,8 @@ public class Point {
     private double y;
 
     public Point() {
-
+        x = 0.0;
+        y = 0.0;
     }
     public Point(double x, double y) {
         this.x = x;
@@ -14,15 +15,14 @@ public class Point {
     }
     
     public Point difference(Point point) {
-       // return
-       // Point p1 = new Point()
-        // Point p2 = new Point()
-        // Point p3 = p1.difference(p2)
-        // p1 - p2
+        Point p1 = new Point();
+        Point p2 = new Point();
+        Point p3 = p1.difference(p2);
+        return p3;
     }
 
     public void displayCoordinate() {
-
+        System.out.println(x + ", " + y);
     }
 
     public double distance(Point point) {
@@ -30,14 +30,29 @@ public class Point {
     }
 
     public double getX() {
-        //return
+        return x; 
     }
 
     public double getY() {
-        //return
+        return y;
     }
     
     public void linearEquation(Point point) {
-        
+    }
+
+    public Point midpoint(Point point) {
+        // return midpoint as new point
+    }
+
+    public double slope(Point point) {
+        // return slope as double
+    }
+
+    public Point sum(Point point) {
+        // return point
+    }
+
+    public double yIntercept(Point point) {
+        // return y intercept as double
     }
 }
