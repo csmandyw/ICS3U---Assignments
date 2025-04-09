@@ -20,18 +20,6 @@ public class Dictionary {
             while ((line = inputStream.readLine()) != null) {
                 dictionary.add(line);
             }
-            System.out.println("Enter a sentence: ");
-            String sentence[] = keyboard.nextLine().split(" ");
-            keyboard.close();
-
-            System.out.println("Spell check of your sentence: ");
-            for (int i = 0; i < sentence.length; i++) {
-                if (dictionary.contains(sentence[i])) {
-                    System.out.println((i + 1) + ". " + sentence[i] + " <valid>");
-                } else {
-                    System.out.println((i + 1) + ". " + sentence[i] + " <invalid>");
-                }
-            }
         } catch (FileNotFoundException exception) {
             System.out.println("Error opening file.");
         } catch (IOException exception) {
@@ -39,6 +27,19 @@ public class Dictionary {
         } finally { // good practice; generally used if code deals with files; always go through
             if (inputStream != null) {
                 inputStream.close();
+            }
+        }
+
+        System.out.println("Enter a sentence: ");
+        String sentence[] = keyboard.nextLine().split(" ");
+        keyboard.close();
+
+        System.out.println("Spell check of your sentence: ");
+        for (int i = 0; i < sentence.length; i++) {
+            if (dictionary.contains(sentence[i])) {
+                System.out.println((i + 1) + ". " + sentence[i] + " <valid>");
+            } else {
+                System.out.println((i + 1) + ". " + sentence[i] + " <invalid>");
             }
         }
     }
