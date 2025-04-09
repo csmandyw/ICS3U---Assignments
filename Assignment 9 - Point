@@ -22,7 +22,9 @@ public class Point {
     }
 
     public void displayCoordinate() {
-        System.out.println(x + ", " + y);
+        System.out.println("The x coordinate is " + x);
+        System.out.println("The y coordinate is " + y);
+
     }
 
     public double distance(Point point) {
