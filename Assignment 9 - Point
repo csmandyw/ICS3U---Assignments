@@ -13,23 +13,6 @@ public class Point {
         this.x = x;
         this.y = y;
     }
-    
-    public Point difference(Point point) {
-        Point p1 = new Point();
-        Point p2 = new Point();
-        Point p3 = p1.difference(p2);
-        return p3;
-    }
-
-    public void displayCoordinate() {
-        System.out.println("The x coordinate is " + x);
-        System.out.println("The y coordinate is " + y);
-
-    }
-
-    public double distance(Point point) {
-        // return
-    }
 
     public double getX() {
         return x; 
@@ -38,23 +21,38 @@ public class Point {
     public double getY() {
         return y;
     }
+
+    public void displayCoordinate() {
+        System.out.println("The x-coordinate is " + x);
+        System.out.println("The y-coordinate is " + y);
+    }
     
-    public void linearEquation(Point point) {
-    }
-
-    public Point midpoint(Point point) {
-        // return midpoint as new point
-    }
-
-    public double slope(Point point) {
-        // return slope as double
+    public Point difference(Point point) {
+        Point newPoint = new Point(x - point.getX(), y - point.getY());
+        return newPoint;
     }
 
     public Point sum(Point point) {
-        // return point
+        Point newPoint = new Point(x + point.getX(), y + point.getY());
+        return newPoint;
     }
 
-    public double yIntercept(Point point) {
-        // return y intercept as double
+    public double distance(Point point) {
+        Math.sqrt(Math.pow(x - point.getX()) + (y - point.getY()));
     }
+
+    // public void linearEquation(Point point) {
+    // }
+
+    // public Point midpoint(Point point) {
+    //     // return midpoint as new point
+    // }
+
+    // public double slope(Point point) {
+    //     // return slope as double
+    // }
+
+    // public double yIntercept(Point point) {
+    //     // return y intercept as double
+    // }
 }
