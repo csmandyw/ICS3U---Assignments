@@ -1,0 +1,12 @@
+public class Main {
+    
+    public static void main(String[] args) throws Exception {
+        Point point = new Point();
+
+        Point point2 = new Point(1.0, 2.0);
+    
+
+        Point difference = point.difference(point2);
+        difference.displayCoordinate();
+    }
+}
