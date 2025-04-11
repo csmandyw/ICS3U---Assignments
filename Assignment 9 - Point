@@ -37,22 +37,26 @@ public class Point {
         return newPoint;
     }
 
-    public double distance(Point point) {
-        Math.sqrt(Math.pow(x - point.getX()) + (y - point.getY()));
-    }
+    // public double distance(Point point) {
+    //     double newPoint =  Math.sqrt(Math.pow(x - point.getX()) + (y - point.getY()));
+    //     return newPoint;
+    // }
 
     // public void linearEquation(Point point) {
+    //     System.out.println("y = " + slope(point)*);
     // }
 
-    // public Point midpoint(Point point) {
-    //     // return midpoint as new point
-    // }
+    public Point midpoint(Point point) {
+       Point newPoint = new Point((x + point.getX()) / 2, (y + point.getY()) / 2);
+       return newPoint;
+    }
 
-    // public double slope(Point point) {
-    //     // return slope as double
-    // }
+    public double slope(Point point) {
+        double slope = ((point.getY() - y) / (point.getX() - x));
+        return slope;
+    }
 
     // public double yIntercept(Point point) {
-    //     // return y intercept as double
+    //     double yIntercept 
     // }
 }
