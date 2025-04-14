@@ -9,13 +9,14 @@ public class Point {
         x = 0.0;
         y = 0.0;
     }
+
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
     public double getX() {
-        return x; 
+        return x;
     }
 
     public double getY() {
@@ -26,7 +27,7 @@ public class Point {
         System.out.println("The x-coordinate is " + x);
         System.out.println("The y-coordinate is " + y);
     }
-    
+
     public Point difference(Point point) {
         Point newPoint = new Point(this.x - point.getX(), this.y - point.getY());
         return newPoint;
@@ -38,15 +39,15 @@ public class Point {
     }
 
     public double distance(Point point) {
-        double newPoint =  Math.sqrt(Math.pow(this.x - point.getX(), 2) + Math.pow(this.y - point.getY(), 2));
+        double newPoint = Math.sqrt(Math.pow(this.x - point.getX(), 2) + Math.pow(this.y - point.getY(), 2));
         return newPoint;
     }
 
     public Point midpoint(Point point) {
         Point newPoint = new Point((this.x + point.getX()) / 2, (this.y + point.getY()) / 2);
         return newPoint;
-     }
-     
+    }
+
     public double slope(Point point) {
         double slope = ((point.getY() - this.y) / (point.getX() - this.x));
         return slope;
@@ -57,8 +58,21 @@ public class Point {
         return yIntercept;
     }
 
-    // public void linearEquation(Point point) {
-    //     System.out.println("y = " + slope(point)*);
-    // }
+    public void linearEquation(Point point) {
+        double m = slope(point);
+        double b = yIntercept(point);
 
+        // Vertical lines (x-coordinates are equal)
+        if (point.getX() == this.getX()) {
+            System.out.println("x = " + this.getX());
+        }
+        // Horizontal lines (slope is 0)
+        else if (m == 0) {
+            System.out.println("y = " + this.getY());
+        }
+        // Otherwise, print the equation
+        else {
+            System.out.println("y = " + m + "x" + (b != 0 ? " + " + b : ""));
+        }
+    }
 }
