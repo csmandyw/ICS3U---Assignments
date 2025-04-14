@@ -5,7 +5,7 @@ public class Main {
         Point point1 = new Point(1.0, 2.0);
         Point point2 = new Point(3.0, 4.0);
 
-        System.out.println("Display Coordinate: ");
+        System.out.println("\nDisplay Coordinate: ");
         System.out.println("The x-coordinate of point 1 is: " + point1.getX());
         System.out.println("The y-coordinate of point 1 is: " + point1.getY());
         System.out.println("The x-coordinate of point 2 is: " + point2.getX());
@@ -20,6 +20,19 @@ public class Main {
         sum.displayCoordinate();
 
         double distance = point1.distance(point2);
-        System.out.println("Distance: " + distance);
+        System.out.println("\nDistance: " + distance);
+
+        Point midpoint = point1.midpoint(point2);
+        System.out.println("\nMidpoint: ");
+        midpoint.displayCoordinate();
+
+        double slope = point1.slope(point2);
+        System.out.println("\nSlope: " + slope);
+
+        double yIntercept = point1.yIntercept(point2);
+        System.out.println("\ny-intercept: " + yIntercept);
+
+        System.out.println("\nLinear Equation: ");
+        point1.linearEquation(point2);
     }
 }
