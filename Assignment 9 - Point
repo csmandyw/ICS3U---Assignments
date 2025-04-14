@@ -28,35 +28,37 @@ public class Point {
     }
     
     public Point difference(Point point) {
-        Point newPoint = new Point(x - point.getX(), y - point.getY());
+        Point newPoint = new Point(this.x - point.getX(), this.y - point.getY());
         return newPoint;
     }
 
     public Point sum(Point point) {
-        Point newPoint = new Point(x + point.getX(), y + point.getY());
+        Point newPoint = new Point(this.x + point.getX(), this.y + point.getY());
         return newPoint;
     }
 
-    // public double distance(Point point) {
-    //     double newPoint =  Math.sqrt(Math.pow(x - point.getX()) + (y - point.getY()));
-    //     return newPoint;
-    // }
+    public double distance(Point point) {
+        double newPoint =  Math.sqrt(Math.pow(this.x - point.getX(), 2) + Math.pow(this.y - point.getY(), 2));
+        return newPoint;
+    }
+
+    public Point midpoint(Point point) {
+        Point newPoint = new Point((this.x + point.getX()) / 2, (this.y + point.getY()) / 2);
+        return newPoint;
+     }
+     
+    public double slope(Point point) {
+        double slope = ((point.getY() - this.y) / (point.getX() - this.x));
+        return slope;
+    }
+
+    public double yIntercept(Point point) {
+        double yIntercept = point.getY() - slope(point) * point.getX();
+        return yIntercept;
+    }
 
     // public void linearEquation(Point point) {
     //     System.out.println("y = " + slope(point)*);
     // }
 
-    public Point midpoint(Point point) {
-       Point newPoint = new Point((x + point.getX()) / 2, (y + point.getY()) / 2);
-       return newPoint;
-    }
-
-    public double slope(Point point) {
-        double slope = ((point.getY() - y) / (point.getX() - x));
-        return slope;
-    }
-
-    // public double yIntercept(Point point) {
-    //     double yIntercept 
-    // }
 }
