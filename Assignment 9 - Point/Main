@@ -1,16 +1,15 @@
-
 public class Main {
-    
+
     public static void main(String[] args) throws Exception {
-        Point point1 = new Point(1.0, 2.0);
-        Point point2 = new Point(3.0, 4.0);
+        Point point1 = new Point(9.0, -3.0);
+        Point point2 = new Point(1.0, -3.0);
 
         System.out.println("\nDisplay Coordinate: ");
         System.out.println("The x-coordinate of point 1 is: " + point1.getX());
         System.out.println("The y-coordinate of point 1 is: " + point1.getY());
         System.out.println("The x-coordinate of point 2 is: " + point2.getX());
         System.out.println("The y-coordinate of point 2 is: " + point2.getY());
-    
+
         Point difference = point1.difference(point2);
         System.out.println("\nDifference: ");
         difference.displayCoordinate();
