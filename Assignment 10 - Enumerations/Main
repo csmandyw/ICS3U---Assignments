@@ -1,4 +1,6 @@
+
 // Enumerations - Assignment 10 (Apr.23.2025)
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Main {
@@ -8,11 +10,15 @@ public class Main {
         System.out.println("2025 Saudi Arabian Grand Prix Top Ten Rankings: ");
         System.out.println("\nEnter a position (ex. P1, P2, P3... P10): ");
 
-        String input = keyboard.next().toUpperCase(); // changes lowercase to uppercase in case of any misinputs
-
-        f1GrandPrix position = f1GrandPrix.valueOf(input); 
-        position.displayInfo();
-
+        try {
+            String input = keyboard.next().toUpperCase(); // changes lowercase to uppercase in case of any misinputs
+            f1GrandPrix position = f1GrandPrix.valueOf(input);
+            position.displayInfo();
+        } catch (NoSuchElementException exception) {
+            System.out.println("Put in a vaild position. Many thanks.");
+        } catch (IllegalArgumentException exception) {
+            System.out.println("Put in a vaild position. Many thanks.");
+        }
         keyboard.close();
     }
 }
