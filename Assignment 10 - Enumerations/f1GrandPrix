@@ -1,0 +1,47 @@
+// Enumerations - Assignment 10 (Apr.23.2025)
+
+public enum f1GrandPrix {
+
+    // 10 values
+    P1("McLaren", "Oscar Piastri", 25),
+    P2("Red Bull Racing", "Max Verstappen", 18),
+    P3("Ferrari", "Charles Leclerc", 15),
+    P4("McLaren", "Lando Norris", 12),
+    P5("Mercedes", "George Russell", 10),
+    P6("Mercedes", "Andrea Kimi Antonelli", 8),
+    P7("Ferrari", "Lewis Hamilton", 6),
+    P8("Williams", "Carlos Sainz", 4),
+    P9("Williams", "Alex Albon", 2),
+    P10("Racing Bulls", "Isack Hadjar", 1);
+
+    // instance variables
+    private String team;
+    private String driver;
+    private int points;
+
+    // constructor
+    f1GrandPrix(String team, String driver, int points) {
+        this.team = team;
+        this.driver = driver;
+        this.points = points;
+    }
+
+    // instance methods
+    public String getTeam() {
+        return team;
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void displayInfo() {
+        System.out.println("\nTeam: " + team);
+        System.out.println("Driver: " + driver);
+        System.out.println("Points: " + points);
+    }
+}
