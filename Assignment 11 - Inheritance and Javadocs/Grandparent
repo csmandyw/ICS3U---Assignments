@@ -49,7 +49,7 @@ protected void setName(String name) {
     return name;
     }
     
-    public String toString() {
+    public String lastName() {
     return "Name: " + name;
     }
     
