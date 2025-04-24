@@ -1,0 +1,66 @@
+// Inheritance and Javadocs - Assignment 11 (Apr.30.2025)
+
+public class Grandparent {
+    
+    public String name;
+    public String lastName;
+    public int asset;
+    public int salary;
+    public boolean gender;
+    public boolean education;
+
+    public Grandparent(String name, String lastName, int asset, int salary, boolean gender, boolean education) {
+        this.name = name;
+        this.lastName = lastName;
+        this.asset = asset;
+        this.salary = salary;
+        this.gender = gender;
+        this.education =  education;
+
+    }
+}
+
+
+
+
+
+protected void setName(String name) {
+this.name = name;
+}
+
+protected String getName() {
+return name;
+}
+
+public String toString() {
+return "Name: " + name;
+}
+
+protected boolean sameName(Person person) {
+return this.name.equalsIgnoreCase(person.getName());
+}
+
+
+protected void setName(String name) {
+    this.name = name;
+    }
+    
+    protected String getName() {
+    return name;
+    }
+    
+    public String toString() {
+    return "Name: " + name;
+    }
+    
+    protected boolean sameName(Person person) {
+    return this.name.equalsIgnoreCase(person.getName());
+    }
+
+// name
+// last name
+// salary
+// asset
+// gender
+// education
+
