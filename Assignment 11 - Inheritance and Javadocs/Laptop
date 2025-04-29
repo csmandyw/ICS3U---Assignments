@@ -1,0 +1,44 @@
+
+public class Laptop extends Electronics {
+
+    protected int batteryLife;
+    protected double size;
+
+    public Laptop(String product, double price, String brand, int quantity, int warranty, int batteryLife,
+            double size) {
+        super(product, price, brand, quantity, warranty);
+        this.batteryLife = batteryLife;
+        this.size = size;
+    }
+
+    // Getters and Setters
+    protected int getBatteryLife() {
+        return batteryLife;
+    }
+
+    protected double getSize() {
+        return size;
+    }
+
+    protected void setBatteryLife() {
+        this.batteryLife = 100;
+    }
+
+    protected void setSize(double size) {
+        this.size = size;
+    }
+
+    // Methods
+    protected double totalPrice() {
+        double totalPrice = (price - discountedAmount) + afterTax(tax);
+        return totalPrice;
+    }
+   
+    protected void displayInfo() {
+        super.displayInfo();
+        System.out.println("Size: " + size);
+        System.out.println("Total price: " + totalPrice());
+    } 
+
+
+}
