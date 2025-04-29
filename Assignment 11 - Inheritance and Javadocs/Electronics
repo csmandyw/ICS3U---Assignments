@@ -1,34 +1,43 @@
+
 public class Electronics extends Products {
 
-        protected int warranty;
-        protected boolean isOn;
-    
-        public Electronics(String product, double price, String brand, int quantity, int warranty, boolean isOn) {
-            super(product, brand, price, quantity);
-            this.warranty = 1;
-            this.isOn = false;
-        }
-    
-        // Getters and setters
-        public int getWarranty() { return warranty; }
-        public void setWarranty(int warranty) { this.warranty = warranty; }
-    
-        // Methods
-        public void extendWarranty(int years) {
-            warranty += years;
-        }
-    
-        public void displayInfo() {
-            super.displayInfo();
-            System.out.println("Warranty: " + warranty + " years");
-        }
-    
-        public void checkWarranty() {
-            System.out.println("Warranty remaining: " + warranty + " years");
-        }
-    
-        // public void power() {
-        //     isOn = !isOn;
-        //     System.out.println(product + " is now " + (isOn ? "ON" : "OFF"));
-        // }
+    protected int warranty;
+    protected double tax;
+
+    public Electronics(String product, double price, String brand, int quantity, int warranty) {
+        super(product, brand, price, quantity);
+        this.warranty = 1;
+    }
+
+    // Getters and setters
+    protected int getWarranty() {
+        return warranty;
+    }
+
+    protected void setWarranty(int warranty) {
+        this.warranty = warranty;
+    }
+
+    // Methods
+    protected void extendWarranty(int years) {
+        warranty += years;
+    }
+
+    protected void displayInfo() {
+        super.displayInfo();
+        System.out.println("Warranty: " + warranty + " years");
+    }
+
+    protected void checkWarranty() {
+        System.out.println("Warranty remaining: " + warranty + " years");
+    }
+    protected double discount(double discount) {
+        double discountAmount = price * (discount / 100);
+        return discountAmount;
+    }
+
+    protected double afterTax(double tax) {
+        double newPrice = price * (tax / 100 + 1);
+        return newPrice;
+    }
 }
