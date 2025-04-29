@@ -1,0 +1,34 @@
+public class Electronics extends Products {
+
+        protected int warranty;
+        protected boolean isOn;
+    
+        public Electronics(String product, double price, String brand, int quantity, int warranty, boolean isOn) {
+            super(product, brand, price, quantity);
+            this.warranty = 1;
+            this.isOn = false;
+        }
+    
+        // Getters and setters
+        public int getWarranty() { return warranty; }
+        public void setWarranty(int warranty) { this.warranty = warranty; }
+    
+        // Methods
+        public void extendWarranty(int years) {
+            warranty += years;
+        }
+    
+        public void displayInfo() {
+            super.displayInfo();
+            System.out.println("Warranty: " + warranty + " years");
+        }
+    
+        public void checkWarranty() {
+            System.out.println("Warranty remaining: " + warranty + " years");
+        }
+    
+        // public void power() {
+        //     isOn = !isOn;
+        //     System.out.println(product + " is now " + (isOn ? "ON" : "OFF"));
+        // }
+}
