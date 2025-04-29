@@ -1,26 +1,67 @@
+
 // Inheritance and Javadocs - Assignment 11 (Apr.30.2025)
 
 public class Products {
 
-protected String name;
-protected double price;
-protected int quantity;
+  protected String product;
+  protected String brand;
+  protected double price;
+  protected int quantity;
 
-public Products(String name, double price, int quantity) {
-  this.name = name;
-  this.price = price;
-  this.quantity = quantity;
-}
+  public Products(String product, String brand, double price, int quantity) {
+    this.product = product;
+    this.brand = brand;
+    this.price = price;
+    this.quantity = quantity;
+  }
 
-protected String setName; 
+  // Getters and setters
+  protected String getProduct() {
+    return product;
+  }
 
-protected String getName;
-  return name;
+  protected String getBrand() {
+    return brand;
+  }
 
-protected double getPrice;
-  return price;
+  protected double getPrice() {
+    return price;
+  }
 
-protected int getQuantity;
-  return quantity;
+  protected int getQuantity() {
+    return quantity;
+  }
 
+  protected void setProduct(String product) {
+    this.product = product;
+  }
+
+  protected void setBrand(String brand) {
+    this.brand = brand;
+  }
+
+  protected void setPrice(double price) {
+    this.price = price;
+  }
+
+  protected void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
+
+  // Methods
+  protected void displayInfo() {
+    System.out.println("\nProduct: " + product);
+    System.out.println("Brand: " + brand);
+    System.out.println("Price: $" + price);
+    System.out.println("Quantity: " + quantity);
+  }
+
+  protected void discount(double discount) {
+    double discountAmount = price * (discount / 100);
+    price -= discountAmount;
+  }
+
+  public void increaseQuantity(int amount) {
+    quantity += amount;
+  }
 }
