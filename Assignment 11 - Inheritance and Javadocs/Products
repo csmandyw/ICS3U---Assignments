@@ -3,65 +3,68 @@
 
 public class Products {
 
-  protected String product;
-  protected String brand;
-  protected double price;
-  protected int quantity;
+    protected String product;
+    protected String brand;
+    protected double price;
+    protected int quantity;
 
-  public Products(String product, String brand, double price, int quantity) {
-    this.product = product;
-    this.brand = brand;
-    this.price = price;
-    this.quantity = quantity;
-  }
+    public Products(String product, String brand, double price, int quantity) {
+        this.product = product;
+        this.brand = brand;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
-  // Getters and setters
-  protected String getProduct() {
-    return product;
-  }
+    // Getters and setters
+    protected String getProduct() {
+        return product;
+    }
 
-  protected String getBrand() {
-    return brand;
-  }
+    protected String getBrand() {
+        return brand;
+    }
 
-  protected double getPrice() {
-    return price;
-  }
+    protected double getPrice() {
+        return price;
+    }
 
-  protected int getQuantity() {
-    return quantity;
-  }
+    protected int getQuantity() {
+        return quantity;
+    }
 
-  protected void setProduct(String product) {
-    this.product = product;
-  }
+    protected void setProduct(String product) {
+        this.product = product;
+    }
 
-  protected void setBrand(String brand) {
-    this.brand = brand;
-  }
+    protected void setBrand(String brand) {
+        this.brand = brand;
+    }
 
-  protected void setPrice(double price) {
-    this.price = price;
-  }
+    protected void setPrice(double price) {
+        this.price = price;
+    }
 
-  protected void setQuantity(int quantity) {
-    this.quantity = quantity;
-  }
+    protected void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-  // Methods
-  protected void displayInfo() {
-    System.out.println("\nProduct: " + product);
-    System.out.println("Brand: " + brand);
-    System.out.println("Price: $" + price);
-    System.out.println("Quantity: " + quantity);
-  }
+    // Methods
+    protected void quantity(int amount) {
+        quantity += amount;
+    }
 
-  protected void discount(double discount) {
-    double discountAmount = price * (discount / 100);
-    price -= discountAmount;
-  }
+    protected double subtotal(double subtotal) {
+        subtotal = quantity * price;
+        return subtotal;
+    }
 
-  public void increaseQuantity(int amount) {
-    quantity += amount;
-  }
+    protected void displayInfo() {
+        System.out.println("\nProduct: " + product);
+        System.out.println("Brand: " + brand);
+        System.out.println("Price/item: $" + price);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Subtotal: $" + subtotal());
+    }
+
+
 }
