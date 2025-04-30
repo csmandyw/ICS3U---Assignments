@@ -1,44 +1,119 @@
-
+/**
+ * The Laptop class represents an electronic product, inheriting from
+ * Electronics.
+ * 
+ * @author Mandy Weng
+ * @version 1.0
+ */
 public class Laptop extends Electronics {
 
-    protected int batteryLife;
-    protected double size;
+    /** The type of processor. */
+    protected String processor;
 
-    public Laptop(String product, double price, String brand, int quantity, int warranty, int batteryLife,
-            double size) {
-        super(product, price, brand, quantity, warranty);
-        this.batteryLife = batteryLife;
-        this.size = size;
+    /** The screen size. */
+    protected double screenSize;
+
+    /**
+     * Constructor for Laptop, includes all parameters.
+     * 
+     * @param product    the product name
+     * @param brand      the brand name
+     * @param price      the price per product
+     * @param quantity   the amount of products you purchase
+     * @param warranty   the warranty in years
+     * @param discount   the discount applied in percentage
+     * @param tax        the tax rate applied
+     * @param processor  the processor type
+     * @param screenSize the screen size in inches
+     */
+    public Laptop(String product, String brand, double price, int quantity, int warranty, double discount, double tax,
+            String processor, double screenSize) {
+        super(product, brand, price, quantity, warranty, discount, tax);
+        this.processor = processor;
+        this.screenSize = screenSize;
     }
 
-    // Getters and Setters
-    protected int getBatteryLife() {
-        return batteryLife;
+    /**
+     * Constructor for Laptop, has defaults for warranty and discount.
+     * 
+     * @param product    the product name
+     * @param brand      the brand name
+     * @param price      the price per product
+     * @param quantity   the amount of products you purchase
+     * @param tax        the tax rate applied
+     * @param processor  the processor type
+     * @param screenSize the screen size in inches
+     */
+    public Laptop(String product, String brand, double price, int quantity, double tax, String processor,
+            double screenSize) {
+        super(product, brand, price, quantity, 1, 0.0, tax);
+        this.processor = processor;
+        this.screenSize = screenSize;
     }
 
-    protected double getSize() {
-        return size;
+    /**
+     * @return the processor type
+     */
+    protected String getProcessor() {
+        return processor;
     }
 
-    protected void setBatteryLife() {
-        this.batteryLife = 100;
+    /**
+     * @return the screen size in inches
+     */
+    protected double getScreenSize() {
+        return screenSize;
     }
 
-    protected void setSize(double size) {
-        this.size = size;
+    /**
+     * Sets the processor type.
+     * 
+     * @param processor sets the processor type
+     */
+    protected void setProcessor(String processor) {
+        this.processor = processor;
     }
 
-    // Methods
-    protected double totalPrice() {
-        double totalPrice = (price - discountedAmount) + afterTax(tax);
-        return totalPrice;
+    /**
+     * Sets the screen size in inches.
+     * 
+     * @param screenSize sets the screen size in inches
+     */
+    protected void setScreenSize(double screenSize) {
+        this.screenSize = screenSize;
     }
-   
+
+    /**
+     * Upgrades to a new processor.
+     * 
+     * @param newProcessor processor to new processor
+     */
+    protected void upgradeProcessor(String newProcessor) {
+        processor = newProcessor;
+    }
+
+    /**
+     * Increase screen size.
+     * 
+     * @param newProcessor adds additional size
+     */
+    protected void increaseScreenSize(double additionalSize) {
+        screenSize += additionalSize;
+    }
+
+    /**
+     * Displays a receipt of your order, including product, brand information,
+     * pricing and quantity.
+     * Includes warranty and final price after applying discounts and tax.
+     * Includes extra product details such as the processor and screen size in
+     * inches, specific to a laptop.
+     */
     protected void displayInfo() {
         super.displayInfo();
-        System.out.println("Size: " + size);
-        System.out.println("Total price: " + totalPrice());
-    } 
-
-
+        System.out.println("\nExtra Product Details: ");
+        System.out.println("Processor: " + getProcessor());
+        System.out.println("Upgraded Processor: " + processor);
+        System.out.println("Screen Size: " + getScreenSize() + " inches");
+        System.out.println("New Screen Size: " + screenSize + " inches");
+    }
 }
