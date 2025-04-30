@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        // test products class
+        System.out.println("--- Products Test ---");
+        Products product1 = new Products("Notebook", "Scholastic", 10.0, 3);
+        product1.displayInfo(); // base price = 30.0
+        product1.quantity(2); // add 2 more
+        System.out.println("Updated Quantity: " + product1.getQuantity());
+        System.out.println("New Base Price: $" + product1.basePrice());
+
+        // test electronics class
+        System.out.println("\n--- Electronics Test ---");
+        Electronics phone = new Electronics("Phone", "Samsung", 800.0, 1, 1, 15.0, 13.0);
+        phone.displayInfo(); // includes warranty, discount, and tax
+        phone.extendWarranty(1); // 1 year warranty
+
+        // test laptop class
+        System.out.println("\n--- Laptop Test ---");
+        Laptop laptop = new Laptop("Laptop", "Apple", 2000.0, 1, 2, 5.0, 13.0, "Intel Core i7", 16.0);
+        laptop.displayInfo(); // includes processor and screen size
+        laptop.upgradeProcessor("Intel Core i9");
+        laptop.increaseScreenSize(0.5);
+    }
+}
