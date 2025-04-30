@@ -1,43 +1,134 @@
-
+/**
+ * The electronics class represents an electronic product, inheriting from
+ * Products.
+ * 
+ * @author Mandy Weng
+ * @version 1.0
+ */
 public class Electronics extends Products {
 
+    /** The warranty years. */
     protected int warranty;
+
+    /** The discounts available. */
+    protected double discount;
+
+    /** The tax rate. */
     protected double tax;
 
-    public Electronics(String product, double price, String brand, int quantity, int warranty) {
+    /**
+     * Constructor for electronics.
+     * 
+     * @param product  the product name
+     * @param brand    the brand name
+     * @param price    the price per product
+     * @param quantity the amount of products you purchase
+     * @param warranty the warranty in years
+     * @param discount the discount applied in percentage
+     * @param tax      the tax rate applied
+     */
+    public Electronics(String product, String brand, double price, int quantity, int warranty, double discount,
+            double tax) {
         super(product, brand, price, quantity);
-        this.warranty = 1;
+        this.warranty = warranty;
+        this.discount = discount;
+        this.tax = tax;
     }
 
-    // Getters and setters
+    /**
+     * @return the warranty in years
+     */
     protected int getWarranty() {
         return warranty;
     }
 
+    /**
+     * @return the discount applied in percentage
+     */
+    protected double getDiscount() {
+        return discount;
+    }
+
+    /**
+     * @return the tax rate applied
+     */
+    protected double getTax() {
+        return tax;
+    }
+
+    /**
+     * Sets the warranty in years.
+     * 
+     * @param warranty sets the warranty in years
+     */
     protected void setWarranty(int warranty) {
         this.warranty = warranty;
     }
 
-    // Methods
+    /**
+     * Sets the discount applied in percentage.
+     * 
+     * @param discount sets the discount applied in percentage
+     */
+    protected void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    /**
+     * Sets the tax rate applied.
+     * 
+     * @param tax sets the tax rate applied
+     */
+    protected void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    /**
+     * Adds extra years if you would like to extend warranty
+     */
     protected void extendWarranty(int years) {
         warranty += years;
     }
 
+    /**
+     * Calculates discounted price
+     * 
+     * @return discounted price
+     */
+    protected double discountPrice() {
+        return price * (discount / 100);
+    }
+
+    /**
+     * Calculates subtotal after applying discounts
+     * 
+     * @return subtotal after applying discount
+     */
+    protected double subtotal() {
+        return price - discountPrice();
+    }
+
+    /**
+     * Calculates final price after applying discounts and tax
+     *  
+     * @return final price after applying discount and tax
+     */
+    protected double finalPrice() {
+        return subtotal() * (tax / 100 + 1);
+    }
+
+    /**
+     * Displays a receipt of your order, including product, brand information,
+     * pricing and quantity.
+     * Includes warranty and final price after applying discounts and tax.
+     */
     protected void displayInfo() {
         super.displayInfo();
-        System.out.println("Warranty: " + warranty + " years");
-    }
-
-    protected void checkWarranty() {
-        System.out.println("Warranty remaining: " + warranty + " years");
-    }
-    protected double discount(double discount) {
-        double discountAmount = price * (discount / 100);
-        return discountAmount;
-    }
-
-    protected double afterTax(double tax) {
-        double newPrice = price * (tax / 100 + 1);
-        return newPrice;
+        System.out.println("Warranty: " + getWarranty() + " years");
+        System.out.println("Extended Warranty: " + warranty + " years");        
+        System.out.println("Total Warranty: " + (getWarranty() + warranty) + " years");
+        System.out.println("Discount Amount: $" + discountPrice());
+        System.out.println("Subtotal: $" + subtotal());
+        System.out.println("Final Price (after discount and tax): $" + finalPrice());
     }
 }
