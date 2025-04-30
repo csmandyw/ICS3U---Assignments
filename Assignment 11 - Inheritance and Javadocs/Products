@@ -1,13 +1,31 @@
-
-// Inheritance and Javadocs - Assignment 11 (Apr.30.2025)
-
+/**
+ * The Products class serves as a base class for all product-related subclasses.
+ * 
+ * @author Mandy Weng
+ * @version 1.0
+ */
 public class Products {
 
+    /** The product name. */
     protected String product;
+
+    /** The brand name. */
     protected String brand;
+
+    /** The price per product. */
     protected double price;
+
+    /** The amount of products you purchase. */
     protected int quantity;
 
+    /**
+     * Constructs a new product object with the given parameters.
+     * 
+     * @param product  the product name
+     * @param brand    the brand name
+     * @param price    the price per product
+     * @param quantity the amount of products you purchase
+     */
     public Products(String product, String brand, double price, int quantity) {
         this.product = product;
         this.brand = brand;
@@ -15,56 +33,96 @@ public class Products {
         this.quantity = quantity;
     }
 
-    // Getters and setters
+    /**
+     * @return the product name
+     */
     protected String getProduct() {
         return product;
     }
 
+    /**
+     * @return the brand name
+     */
     protected String getBrand() {
         return brand;
     }
 
+    /**
+     * @return the price per product
+     */
     protected double getPrice() {
         return price;
     }
 
+    /**
+     * @return the amount of products you purchase
+     */
     protected int getQuantity() {
         return quantity;
     }
 
+    /**
+     * Sets the name of the product.
+     * 
+     * @param product sets product name
+     */
     protected void setProduct(String product) {
         this.product = product;
     }
 
+    /**
+     * Sets the brand name.
+     * 
+     * @param brand sets brand name
+     */
     protected void setBrand(String brand) {
         this.brand = brand;
     }
 
+    /**
+     * Sets the price per product.
+     * 
+     * @param price sets the price per product
+     */
     protected void setPrice(double price) {
         this.price = price;
     }
 
+    /**
+     * Sets the amount of products you purchase.
+     * 
+     * @param quantity the amount of products you purchase
+     */
     protected void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    // Methods
+    /**
+     * Adds up the quantity of the product you purchased
+     */
     protected void quantity(int amount) {
         quantity += amount;
     }
 
-    protected double subtotal(double subtotal) {
-        subtotal = quantity * price;
-        return subtotal;
+    /**
+     * Calculates the base price of your order, excluding discounts and tax
+     * 
+     * @return base price
+     */
+    protected double basePrice() {
+        return quantity * price;
     }
 
+    /**
+     * Displays a receipt of your order, including product, brand information,
+     * pricing and quantity.
+     * Excludes discounts and tax.
+     */
     protected void displayInfo() {
         System.out.println("\nProduct: " + product);
         System.out.println("Brand: " + brand);
-        System.out.println("Price/item: $" + price);
+        System.out.println("Price: $" + price);
         System.out.println("Quantity: " + quantity);
-        System.out.println("Subtotal: $" + subtotal());
+        System.out.println("Base Price: $" + basePrice());
     }
-
-
 }
