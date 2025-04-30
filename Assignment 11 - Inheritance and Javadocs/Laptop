@@ -114,6 +114,6 @@ public class Laptop extends Electronics {
         System.out.println("Processor: " + getProcessor());
         System.out.println("Upgraded Processor: " + processor);
         System.out.println("Screen Size: " + getScreenSize() + " inches");
-        System.out.println("New Screen Size: " + screenSize + " inches");
+        System.out.println("New Screen Size: " + screenSize + " inches\n");
     }
 }
