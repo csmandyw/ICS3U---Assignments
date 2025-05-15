@@ -1,8 +1,8 @@
 // Enumerations - Assignment 10 (May.14.2025)
 
-public enum f1GrandPrix {
+public enum F1GrandPrix { // always capital bc enum
 
-    // 10 values
+    // 10 values; change variable names
     P1("McLaren", "Oscar Piastri", 25),
     P2("Red Bull Racing", "Max Verstappen", 18),
     P3("Ferrari", "Charles Leclerc", 15),
@@ -20,7 +20,7 @@ public enum f1GrandPrix {
     private int points;
 
     // constructor
-    f1GrandPrix(String team, String driver, int points) {
+    F1GrandPrix(String team, String driver, int points) {
         this.team = team;
         this.driver = driver;
         this.points = points;
