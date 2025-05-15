@@ -1,5 +1,4 @@
 // Enumerations - Assignment 10 (May.14.2025)
-
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class Main {
 
         try {
             String input = keyboard.next().toUpperCase(); // changes lowercase to uppercase in case of any misinputs
-            f1GrandPrix position = f1GrandPrix.valueOf(input);
+            F1GrandPrix position = F1GrandPrix.valueOf(input);
             position.displayInfo();
         } catch (NoSuchElementException exception) {
             System.out.println("Please double check if you have put in a valid position.");
