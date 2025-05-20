@@ -1,5 +1,7 @@
+package inheritance;
+
 /**
- * The electronics class represents an electronic product, inheriting from
+ * The Electronics class represents an electronic product, inheriting from
  * Products.
  * 
  * @author Mandy Weng
@@ -19,13 +21,13 @@ public class Electronics extends Products {
     /**
      * Constructor for electronics.
      * 
-     * @param product  the product name
-     * @param brand    the brand name
-     * @param price    the price per product
-     * @param quantity the amount of products you purchase
-     * @param warranty the warranty in years
-     * @param discount the discount applied in percentage
-     * @param tax      the tax rate applied
+     * @param product  The product name.
+     * @param brand    The brand name.
+     * @param price    The price per product.
+     * @param quantity The amount of products you purchase.
+     * @param warranty The warranty in years.
+     * @param discount The discount applied in percentage.
+     * @param tax      The tax rate applied.
      */
     public Electronics(String product, String brand, double price, int quantity, int warranty, double discount,
             double tax) {
@@ -36,21 +38,21 @@ public class Electronics extends Products {
     }
 
     /**
-     * @return the warranty in years
+     * @return The warranty in years.
      */
     protected int getWarranty() {
         return warranty;
     }
 
     /**
-     * @return the discount applied in percentage
+     * @return The discount applied in percentage.
      */
     protected double getDiscount() {
         return discount;
     }
 
     /**
-     * @return the tax rate applied
+     * @return The tax rate applied.
      */
     protected double getTax() {
         return tax;
@@ -59,7 +61,7 @@ public class Electronics extends Products {
     /**
      * Sets the warranty in years.
      * 
-     * @param warranty sets the warranty in years
+     * @param warranty Sets the warranty in years.
      */
     protected void setWarranty(int warranty) {
         this.warranty = warranty;
@@ -68,7 +70,7 @@ public class Electronics extends Products {
     /**
      * Sets the discount applied in percentage.
      * 
-     * @param discount sets the discount applied in percentage
+     * @param discount Sets the discount applied in percentage.
      */
     protected void setDiscount(double discount) {
         this.discount = discount;
@@ -77,41 +79,41 @@ public class Electronics extends Products {
     /**
      * Sets the tax rate applied.
      * 
-     * @param tax sets the tax rate applied
+     * @param tax Sets the tax rate applied.
      */
     protected void setTax(double tax) {
         this.tax = tax;
     }
 
     /**
-     * Adds extra years if you would like to extend warranty
+     * Adds extra years if you would like to extend warranty.
      */
     protected void extendWarranty(int years) {
         warranty += years;
     }
 
     /**
-     * Calculates discounted price
+     * Calculates discounted price.
      * 
-     * @return discounted price
+     * @return Returns discounted price.
      */
     protected double discountPrice() {
         return price * (discount / 100);
     }
 
     /**
-     * Calculates subtotal after applying discounts
+     * Calculates subtotal after applying discounts.
      * 
-     * @return subtotal after applying discount
+     * @return Returns subtotal after applying discount.
      */
     protected double subtotal() {
         return price - discountPrice();
     }
 
     /**
-     * Calculates final price after applying discounts and tax
-     *  
-     * @return final price after applying discount and tax
+     * Calculates final price after applying discounts and tax.
+     * 
+     * @return Returns final price after applying discount and tax.
      */
     protected double finalPrice() {
         return subtotal() * (tax / 100 + 1);
@@ -125,7 +127,7 @@ public class Electronics extends Products {
     protected void displayInfo() {
         super.displayInfo();
         System.out.println("Warranty: " + getWarranty() + " years");
-        System.out.println("Extended Warranty: " + warranty + " years");        
+        System.out.println("Extended Warranty: " + warranty + " years");
         System.out.println("Total Warranty: " + (getWarranty() + warranty) + " years");
         System.out.println("Discount Amount: $" + discountPrice());
         System.out.println("Subtotal: $" + subtotal());
