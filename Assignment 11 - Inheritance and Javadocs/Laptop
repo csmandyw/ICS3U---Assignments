@@ -1,3 +1,5 @@
+package inheritance;
+
 /**
  * The Laptop class represents an electronic product, inheriting from
  * Electronics.
@@ -16,15 +18,15 @@ public class Laptop extends Electronics {
     /**
      * Constructor for Laptop, includes all parameters.
      * 
-     * @param product    the product name
-     * @param brand      the brand name
-     * @param price      the price per product
-     * @param quantity   the amount of products you purchase
-     * @param warranty   the warranty in years
-     * @param discount   the discount applied in percentage
-     * @param tax        the tax rate applied
-     * @param processor  the processor type
-     * @param screenSize the screen size in inches
+     * @param product    The product name.
+     * @param brand      The brand name.
+     * @param price      The price per product.
+     * @param quantity   The amount of products you purchase.
+     * @param warranty   The warranty in years.
+     * @param discount   The discount applied in percentage.
+     * @param tax        The tax rate applied.
+     * @param processor  The processor type.
+     * @param screenSize The screen size in inches.
      */
     public Laptop(String product, String brand, double price, int quantity, int warranty, double discount, double tax,
             String processor, double screenSize) {
@@ -36,13 +38,13 @@ public class Laptop extends Electronics {
     /**
      * Constructor for Laptop, has defaults for warranty and discount.
      * 
-     * @param product    the product name
-     * @param brand      the brand name
-     * @param price      the price per product
-     * @param quantity   the amount of products you purchase
-     * @param tax        the tax rate applied
-     * @param processor  the processor type
-     * @param screenSize the screen size in inches
+     * @param product    The product name.
+     * @param brand      The brand name.
+     * @param price      The price per product.
+     * @param quantity   The amount of products you purchase.
+     * @param tax        The tax rate applied.
+     * @param processor  The processor type.
+     * @param screenSize The screen size in inches.
      */
     public Laptop(String product, String brand, double price, int quantity, double tax, String processor,
             double screenSize) {
@@ -52,14 +54,14 @@ public class Laptop extends Electronics {
     }
 
     /**
-     * @return the processor type
+     * @return Returns the processor type.
      */
     protected String getProcessor() {
         return processor;
     }
 
     /**
-     * @return the screen size in inches
+     * @return Returns the screen size in inches.
      */
     protected double getScreenSize() {
         return screenSize;
@@ -68,7 +70,7 @@ public class Laptop extends Electronics {
     /**
      * Sets the processor type.
      * 
-     * @param processor sets the processor type
+     * @param processor Sets the processor type.
      */
     protected void setProcessor(String processor) {
         this.processor = processor;
@@ -77,7 +79,7 @@ public class Laptop extends Electronics {
     /**
      * Sets the screen size in inches.
      * 
-     * @param screenSize sets the screen size in inches
+     * @param screenSize Sets the screen size in inches.
      */
     protected void setScreenSize(double screenSize) {
         this.screenSize = screenSize;
@@ -86,7 +88,7 @@ public class Laptop extends Electronics {
     /**
      * Upgrades to a new processor.
      * 
-     * @param newProcessor processor to new processor
+     * @param newProcessor Processor changes to new processor.
      */
     protected void upgradeProcessor(String newProcessor) {
         processor = newProcessor;
@@ -95,7 +97,7 @@ public class Laptop extends Electronics {
     /**
      * Increase screen size.
      * 
-     * @param newProcessor adds additional size
+     * @param newProcessor Adds additional size.
      */
     protected void increaseScreenSize(double additionalSize) {
         screenSize += additionalSize;
