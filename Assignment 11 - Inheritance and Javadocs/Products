@@ -1,3 +1,5 @@
+package inheritance;
+
 /**
  * The Products class serves as a base class for all product-related subclasses.
  * 
@@ -21,10 +23,10 @@ public class Products {
     /**
      * Constructs a new product object with the given parameters.
      * 
-     * @param product  the product name
-     * @param brand    the brand name
-     * @param price    the price per product
-     * @param quantity the amount of products you purchase
+     * @param product  The product name.
+     * @param brand    The brand name.
+     * @param price    The price per product.
+     * @param quantity The amount of products you purchase.
      */
     public Products(String product, String brand, double price, int quantity) {
         this.product = product;
@@ -34,28 +36,28 @@ public class Products {
     }
 
     /**
-     * @return the product name
+     * @return The product name.
      */
     protected String getProduct() {
         return product;
     }
 
     /**
-     * @return the brand name
+     * @return The brand name.
      */
     protected String getBrand() {
         return brand;
     }
 
     /**
-     * @return the price per product
+     * @return The price per product.
      */
     protected double getPrice() {
         return price;
     }
 
     /**
-     * @return the amount of products you purchase
+     * @return The amount of products you purchase.
      */
     protected int getQuantity() {
         return quantity;
@@ -64,7 +66,7 @@ public class Products {
     /**
      * Sets the name of the product.
      * 
-     * @param product sets product name
+     * @param product Sets product name.
      */
     protected void setProduct(String product) {
         this.product = product;
@@ -73,7 +75,7 @@ public class Products {
     /**
      * Sets the brand name.
      * 
-     * @param brand sets brand name
+     * @param brand Sets brand name.
      */
     protected void setBrand(String brand) {
         this.brand = brand;
@@ -82,7 +84,7 @@ public class Products {
     /**
      * Sets the price per product.
      * 
-     * @param price sets the price per product
+     * @param price Sets the price per product.
      */
     protected void setPrice(double price) {
         this.price = price;
@@ -91,23 +93,23 @@ public class Products {
     /**
      * Sets the amount of products you purchase.
      * 
-     * @param quantity the amount of products you purchase
+     * @param quantity The amount of products you purchase.
      */
     protected void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * Adds up the quantity of the product you purchased
+     * Adds up the quantity of the product you purchased.
      */
     protected void quantity(int amount) {
         quantity += amount;
     }
 
     /**
-     * Calculates the base price of your order, excluding discounts and tax
+     * Calculates the base price of your order, excluding discounts and tax.
      * 
-     * @return base price
+     * @return Returns base price.
      */
     protected double basePrice() {
         return quantity * price;
